@@ -61,7 +61,7 @@ public class UrlShortenerService {
         urlMapping.setExpiresAt(LocalDateTime.now().plusMinutes(03));
         urlMapping.setLinkStatus(LinkStatus.ACTIVE);
         urlMapping.setClickCount(0);
-        urlMapping.setShortUrl("http://localhost:8082/api/url/shorten/" + shortCode);
+        urlMapping.setShortUrl("https://api.vasanthkumar.online/api/url/shorten/" + shortCode);
         urlMappingRepository.save(urlMapping);
 
         // clickLog = new ClickLog();

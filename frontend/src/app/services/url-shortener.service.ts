@@ -2,7 +2,7 @@
  * URL Shortener Service
  * 
  * Handles all HTTP communication with the Spring Boot backend API
- * Base URL: http://localhost:8082/api/url
+ * Base URL: http://16.171.134.20:8080/api/url
  */
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -15,7 +15,7 @@ import { ShortenRequest, ShortenResponse } from '../models/url-mapping.model';
 })
 export class UrlShortenerService {
     // Backend API base URL
-    private apiUrl = 'http://localhost:8082/api/url';
+    private apiUrl = 'https://api.vasanthkumar.online/api/url';
 
     constructor(private http: HttpClient) { }
 
@@ -86,7 +86,7 @@ export class UrlShortenerService {
             // Backend returned an unsuccessful response code
             switch (error.status) {
                 case 0:
-                    errorMessage = 'Unable to connect to server. Please ensure the backend is running on port 8082.';
+                    errorMessage = 'Unable to connect to server. Please ensure the backend is running.';
                     break;
                 case 400:
                     errorMessage = error.error?.message || 'Invalid URL format. Please enter a valid URL.';

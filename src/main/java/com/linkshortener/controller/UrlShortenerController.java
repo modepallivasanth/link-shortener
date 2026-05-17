@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api/url")
+@org.springframework.web.bind.annotation.CrossOrigin(origins = {
+        "https://linkshortener.vasanthkumar.online",
+        "http://localhost:4200"
+})
 public class UrlShortenerController {
 
     @Autowired

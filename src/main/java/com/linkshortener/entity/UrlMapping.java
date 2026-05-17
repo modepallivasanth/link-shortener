@@ -17,6 +17,10 @@ public class UrlMapping {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private String longUrl;
     private String shortCode;
     private LocalDateTime createdDate;
@@ -96,6 +100,14 @@ public class UrlMapping {
 
     public void setShortUrl(String shortUrl) {
         this.shortUrl = shortUrl;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }
