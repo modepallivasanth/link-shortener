@@ -1,6 +1,11 @@
 name: EC2 SSH Test
 
 on:
+  push:
+    branches:
+      - ci-cd-pipeline
+    paths:
+      - ".github/workflows/ssh-test.yml"
   workflow_dispatch:
 
 jobs:
